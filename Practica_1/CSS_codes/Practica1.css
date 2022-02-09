@@ -1,0 +1,167 @@
+body > div[class="container-fluid"] {
+    background-color: #008200;
+    height: 50px;
+}
+
+body > div[class="container-fluid"] > img {
+    margin: 80px;
+}
+
+body > div[class="container-fluid"] > div[class="row"] {
+    padding: 0%;
+    align-items: center;
+}
+
+body > div[class="container-fluid"] > div[class="row"] > div {
+    width: 150px;
+}
+
+body > div[class="container-fluid"] > div[class="row"] div {
+    text-align: center;
+}
+
+body > div[class="container-fluid"] > div[class="row"] div span {
+    font-size: 70px;
+}
+
+body > div[class="container-fluid"] > div > div > a {
+    color: white;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin: 0px;
+}
+
+body > div[class="container-fluid"] h2[class="Titulo_primer_parrafo"] {
+    text-indent: 80px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+body > div[class="container-fluid"] p[class="Contenido_primer_parrafo"] {
+    font-size: 25px;
+    text-indent: 80px;
+    margin: 1px;
+}
+
+body > div[class="container-fluid"] h2[class="Servicios"] {
+    text-indent: 80px;
+    margin: 1px;
+}
+
+#Franja_gris_encabezado {
+    height: 100px;
+
+    background-color: gainsboro;
+}
+
+#Franja_gris {
+    height: 350px;
+
+    background-color: gainsboro;
+}
+
+#Franja_gris div img {
+    width: 100px;
+}
+
+#Franja_gris > div {
+    text-align: left;
+}
+
+#Franja_gris > div div {
+    font-size: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+#Franja_gris > div button{
+    background-color: #008200;
+    font-size: 20px;
+    height: 60px;
+    width: 300px;
+}
+
+#Franja_blanca_encabezado {
+    height: 100px;
+
+    background-color: white;
+}
+
+#Franja_blanca {
+    height: 350px;
+
+    background-color: white;
+}
+
+#Franja_blanca div img {
+    width: 100px;
+}
+
+#Franja_blanca > div {
+    text-align: left;
+}
+
+#Franja_blanca > div div {
+    font-size: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+#Franja_blanca > div button{
+    background-color: #008200;
+    font-size: 20px;
+    height: 60px;
+    width: 300px;
+}
+
+#Franja_grisdoble_encabezado {
+    height: 100px;
+    text-indent: 80px;
+    background-color: gainsboro;
+}
+
+#Franja_grisdoble {
+    height: 350px;
+
+    background-color: gainsboro;
+}
+
+#Franja_grisdoble div img {
+    width: 100px;
+}
+
+#Franja_grisdoble > div {
+    text-align: left;
+}
+
+#Franja_grisdoble > div div {
+    font-size: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+#Franja_grisdoble > div button{
+    background-color: #008200;
+    font-size: 20px;
+    height: 60px;
+    width: 300px;
+}
+
+#Franja_blanca_encabezado > h2 {
+    text-indent: 80px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+body div div div p {
+    font-size: 20px;
+    text-indent: 80px;
+    margin: 1px;
+}
+
+body div div div div div button {
+    height: 50px;
+    width: 300px;
+}
