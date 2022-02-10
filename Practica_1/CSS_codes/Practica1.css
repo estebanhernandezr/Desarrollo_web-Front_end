@@ -52,12 +52,13 @@ body > div[class="container-fluid"] h2[class="Servicios"] {
 
 #Franja_gris_encabezado {
     height: 100px;
+    text-indent: 80px;
 
     background-color: gainsboro;
 }
 
 #Franja_gris {
-    height: 350px;
+    height: 420px;
 
     background-color: gainsboro;
 }
@@ -66,11 +67,11 @@ body > div[class="container-fluid"] h2[class="Servicios"] {
     width: 100px;
 }
 
-#Franja_gris > div {
+#Franja_gris div[class="col-4 col-sm-4 col-lg-4"] {
     text-align: left;
 }
 
-#Franja_gris > div div {
+#Franja_gris div[class="col-4 col-sm-4 col-lg-4"] div {
     font-size: 20px;
     width: 300px;
     text-align: left;
@@ -88,9 +89,9 @@ body > div[class="container-fluid"] h2[class="Servicios"] {
 
     background-color: white;
 }
-
+/*-------------------------------------------*/
 #Franja_blanca {
-    height: 350px;
+    height: 420px;
 
     background-color: white;
 }
@@ -99,11 +100,11 @@ body > div[class="container-fluid"] h2[class="Servicios"] {
     width: 100px;
 }
 
-#Franja_blanca > div {
+#Franja_blanca div[class="col-4 col-sm-4 col-lg-4"] {
     text-align: left;
 }
 
-#Franja_blanca > div div {
+#Franja_blanca div[class="col-4 col-sm-4 col-lg-4"] div {
     font-size: 20px;
     width: 300px;
     text-align: left;
@@ -132,11 +133,11 @@ body > div[class="container-fluid"] h2[class="Servicios"] {
     width: 100px;
 }
 
-#Franja_grisdoble > div {
+#Franja_grisdoble div[class="col-4 col-sm-4 col-lg-4"] {
     text-align: left;
 }
 
-#Franja_grisdoble > div div {
+#Franja_grisdoble div[class="col-4 col-sm-4 col-lg-4"] div {
     font-size: 20px;
     width: 300px;
     text-align: left;
@@ -163,5 +164,101 @@ body div div div p {
 
 body div div div div div button {
     height: 50px;
+    width: 300px;
+}
+
+#Caja_gris {
+    height: 300px;
+    width: 800px;
+    margin-top: 40px;
+    background-color: gainsboro;
+}
+
+#Caja_gris p {
+    font-size: 18px;
+    text-indent: 80px;
+    text-align: left;
+    margin: 1px;
+}
+
+#Caja_gris img {
+    height: 100px;
+    width: 250px;
+    margin: 20px;
+}
+
+#fundadores {
+    /*height: 3000px;*/
+    width: 1000px;
+    vertical-align: top;
+}
+
+#fundadores div[class="row"] h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#companeros {
+    /*height: 3000px;*/
+    width: 1000px;
+    vertical-align: top;
+}
+
+#companeros div[class="row"] h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#suportes {
+    /*height: 3000px;*/
+    width: 1000px;
+    vertical-align: top;
+}
+
+#suportes div[class="row"] div img {
+    height: 30px;
+    width: 70px;
+    margin: 10px;
+}
+
+#amigos {
+    /*height: 3000px;*/
+    width: 1000px;
+    vertical-align: top;
+}
+
+#amigos div[class="row"] h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#amigos a {
+    font-size: 10px;
+    margin-left: 40px;
+}
+
+#about {
+    height: 500px;
+    background-color: gainsboro;
+}
+
+#about h2 {
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#contenedor_de_franja {
+    height: 400px;
+    width: 2000px;
+}
+
+#contenedor_de_franja .Cajita {
+    height: 300px;
+    width: 300px;
+}
+
+#contenedor_de_franja .Cajitadoble {
+    height: 200px;
     width: 300px;
 }
