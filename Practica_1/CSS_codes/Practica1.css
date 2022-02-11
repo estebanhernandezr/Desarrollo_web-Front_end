@@ -176,7 +176,6 @@ body div div div div div button {
 
 #Caja_gris p {
     font-size: 18px;
-    text-indent: 80px;
     text-align: left;
     margin: 1px;
 }
@@ -216,9 +215,11 @@ body div div div div div button {
 }
 
 #suportes div[class="row"] div img {
-    height: 30px;
+    /*height: 30px;
     width: 70px;
-    margin: 10px;
+    margin: 10px;*/
+    width: 70%;
+    margin: 30px;
 }
 
 #amigos {
@@ -237,8 +238,12 @@ body div div div div div button {
     margin-left: 40px;
 }
 
+#row_about {
+    background-color: gainsboro;
+}
+
 #about {
-    height: 500px;
+    height: 2100px;
     background-color: gainsboro;
 }
 
@@ -246,6 +251,16 @@ body div div div div div button {
     text-align: left;
     margin-top: 40px;
     margin-bottom: 20px;
+}
+
+#about p {
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#about ul {
+    text-align: left;
 }
 
 #contenedor_de_franja {
@@ -261,4 +276,19 @@ body div div div div div button {
 #contenedor_de_franja .Cajitadoble {
     height: 200px;
     width: 300px;
+}
+
+#boton_sponsors {
+    margin-top: 30px;
+}
+
+#pie_de_pagina {
+    height: 300px;
+    background-color: #008200;
+}
+
+#pie_de_pagina div {
+    height: 300px;
+    width: 800px;
+    background-color: #008200;
 }
