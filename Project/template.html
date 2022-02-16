@@ -15,16 +15,68 @@
         <div id="hero">
 
             <div class="container">
+                <div class="logo">
+                    <h1>MOVE-IT</h1>
+                    <h3>Buscamos las mejores peliculas y encontramos la mejor manera de mostrártelas</h3>
+                    <img src="./Imagenes/white-down-arrow-png-2-300x300.png" alt="">
+                </div>
                 <div class="info">
                     <div>
                         <h1>Planteamiento del problema</h1>
-                        <p>"Según la base de datos de IMBd se han realizado <input type="number" value="3600000"> títulos audiovisuales, de las cuales <input type="number" value="342000"> son películas y el resto son capítulos de series de televisión."</p>
+                        <p>"Según la base de datos de IMBd se han realizado 3.600.000 títulos audiovisuales, de las cuales 342.000 son películas y el resto son capítulos de series de televisión."</p>
                         <p>"Es apenas evidente que ni en diez vidas que tuviésemos nos alcanzaría para ver y percibir, y mucho menos pensar, toda la producción cultural humana"</p>
                         <p>(JESÚS MILLÁN MUÑOZ, Mundiario. 28 de mayo de 2017)</p>
-                        <h5>La accesibilidad a los medios de difusión y producción cada vez mas extendida expone a los consumidores a una cantidad de información que crece descontroladamente. Por este motivo, los consumidores empiezan a precisar de ayudas automatizadas y ergonómicas que les permitan consumir responsablemente un contenido que les beneficie.</h5>
+                        <h4>La accesibilidad a los medios de difusión y producción cada vez mas extendida expone a los consumidores a una cantidad de información que crece descontroladamente. Por este motivo, los consumidores empiezan a precisar de ayudas automatizadas y ergonómicas que les permitan consumir responsablemente un contenido que les beneficie.</h4>
                         <p></p>
-                        <h5>El problema anterior es especialmente percibido por los consumidores de películas. Y ya que estos representan una gran parte del público, dada la clásica tradición cinéfila de la sociedad del siglo XX, es un problema que debe ser resuelto lo antes posible por las grandes plataformas de distribución de contenido.</h5>
+                        <h4>El problema anterior es especialmente percibido por los consumidores de películas. Y ya que estos representan una gran parte del público, dada la clásica tradición cinéfila de la sociedad del siglo XX, es un problema que debe ser resuelto lo antes posible por las grandes plataformas de distribución de contenido.</h4>
                     </div>
+                    <div>
+                        <h1>Propuesta de solución</h1> 
+                        <h4>Queremos crear una pagina en la que podamos dar una sugerencia de que pelicula le podria gustar al usuario, mediante los gustos de las personas. Además de brindar la recomendación la pelicula que le podria gustar al usuario, daremos la información de en que plataforma de streaming puede ver la pelicula </h4>
+                        <p></p>
+                        <h4>Además en la pagina encontraremos una gran lista de peliculas las cuales estaran divididas en diferentes categorias, como lo puede ser el genero</h4>
+                    </div>
+                    <div>
+                        <h1>Antecedentes</h1>
+                        <h5>Actualmente existen varias plataformas de streaming en donde podemos encontrar una recomendación persoonalizada para los usuarios, pero debido a que estas son demasiadas y no comparten catalogo de peliculas entre ellas, hace que el usuario pueda sentirse abrumado o perdido de en que lugar puede encontrar la pelicula que quiere ver</h5>
+                        <p></p>
+                        <h5>Algunas de estas plataformas son: </h5>
+                        <ul>
+                            <li>Netflix</li>
+                            <li>Prime video</li>
+                            <li>Hbo max</li>
+                        </ul>
+                        <h5>Una de las más parecidas donde podemos encontrar en donde ver la pelicula que queremos ver es:</h5>
+                        <ul>
+                            <li>Imdb</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h1>Requerimientos</h1>
+                        <p>
+                            Funcionales:
+                        </p>
+                        <ul>
+                            <li>No debe hacer recomendaciones erroneas, que no esten en streaming o exclusivas de cine</li>
+                            <li>recomendacion pelicula streaming, informacion actualizada, multimedia funcional y categorizacion</li>
+                        </ul>
+                        <p>No funcionales:</p>
+                        <ul>
+                            <li>Funcionar en varios navegadores web y en dispositivos moviles</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h1>Levantamiento requerimientos</h1>
+                        <p>
+                            Las necesidades el correcto funcionamiento de las fuentes de datos, servidores y el hardware
+                        </p>
+                        <ul>
+                            <li>Las tecnicas usadas para este levantamiento son la lluvia de ideas y prototipo.</li>
+                            <li>Todo este desarrollo se realizara haciendo uso de la metodologia agil SCRUM</li>
+                        </ul>
+                    </div>
+
                     <div>
                         <h1>Metodologías de desarrollo</h1>
                         <h3>SCRUM</h3>
@@ -94,9 +146,13 @@
             <div class="slider">
                 <img src="./Imagenes/left-arrow.png" alt="" id="prev">
                 <div class="preview">
-                    <img src="./Imagenes/Scrum.PNG" alt="" class="active thumbnail">
-                    <img src="./Imagenes/Kanban.PNG" alt="" class="active thumbnail">
-                    <img src="./Imagenes/XP.PNG" alt="" class="active thumbnail">
+                    <img src="./Imagenes/clapper.png" alt="" class="active thumbnail">
+                    <img src="./Imagenes/netflix.jpg" alt="" class="thumbnail">
+                    <img src="./Imagenes/imdb.jpg" alt="" class="thumbnail">
+                    <img src="./Imagenes/Requerimientos.jpeg" alt="" class="thumbnail">
+                    <img src="./Imagenes/Scrum.PNG" alt="" class="thumbnail">
+                    <img src="./Imagenes/Kanban.PNG" alt="" class="thumbnail">
+                    <img src="./Imagenes/XP.jpg" alt="" class="thumbnail">
                 </div>
                 <img src="./Imagenes/right-arrow.png" alt="" id="next">
             </div>
@@ -111,9 +167,13 @@
             var thumbnail = document.getElementsByClassName("thumbnail");
 
             var background_img = new Array(
+                "./Imagenes/clapper.png",
+                "./Imagenes/netflix.jpg",
+                "./Imagenes/imdb.jpg",
+                "./Imagenes/Requerimientos.jpeg",
                 "./Imagenes/Scrum.PNG",
                 "./Imagenes/Kanban.PNG",
-                "./Imagenes/XP.PNG",
+                "./Imagenes/XP.jpg",
             );
 
             let i = 0;
