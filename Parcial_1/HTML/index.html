@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>Juego de ahorcado</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="">
+
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <!--BOOTSTRAP-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+        <!--BOOTSTRAP-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="container-fluid" id="hero">
+            <div class="container">
+                <input type="text" value="" id="unknown_word">
+            </div>
+            <div class="container" id="keypad">
+                <div class="row">
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="Q" id="Q_key">Q</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="W" id="W_key">W</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="E" id="E_key">E</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="R" id="R_key">R</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="T" id="T_key">T</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="Y" id="Y_key">Y</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="U" id="U_key">U</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="I" id="I_key">I</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="O" id="O_key">O</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="P" id="P_key">P</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="A" id="A_key">A</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="S" id="S_key">S</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="D" id="D_key">D</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="F" id="F_key">F</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="G" id="G_key">G</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="H" id="H_key">H</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="J" id="J_key">J</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="K" id="K_key">K</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="L" id="L_key">L</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="Ñ" id="Ñ_key">Ñ</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="Z" id="Z_key">Z</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="X" id="X_key">X</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="C" id="C_key">C</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="V" id="V_key">V</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="B" id="B_key">B</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="N" id="N_key">N</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        <button class="key_button" value="M" id="M_key">M</button>
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                        
+                    </div>
+                    <div class="tecla col-1 col-sm-1 col-lg-1" id="">
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../JS/logic.js">
+            alert("RAISE VALUE ERROR");
+        </script>
+    </body>
+    <!--PRIMER CHECKPOINT!-->
+</html>
