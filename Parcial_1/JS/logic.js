@@ -90,6 +90,7 @@ function check_victory() {
         $("#hero").hide();
         alert("¡FELICITACIONES! HAS COMPLETADO LA PALABRA");
         //init();
+        play_victory();
         $("#login").show();
         add_time(false);
     }
@@ -104,6 +105,16 @@ function check_gameover() {
         $("#login").show();
         add_time(true);
     }
+}
+// REPRODUCIR SONIDO DE FONDO CUANDO EL JUGADOR ACIERTA
+function play_rigth() {
+    var audio = new Audio("../OTROS/correct-ding.mp3");
+    audio.play();
+}
+// REPRODUCIR SONIDO DE FONDO CUANDO EL JUGADOR ACIERTA
+function play_victory() {
+    var audio = new Audio("../OTROS/mission-passed.mp3");
+    audio.play();
 }
 // REPRODUCIR SONIDO DE FONDO CUANDO EL JUGADOR COMETE UN ERROR
 function play_error() {
@@ -135,6 +146,8 @@ function catch_click() {
             make_img_transition();
             intentos--;
             play_error();
+        } else {
+            play_rigth();
         }
         check_victory();
         check_gameover();
@@ -165,7 +178,10 @@ function catch_hint() {
 // IMPRIMIR LA LISTA MAS ACTUALIZADA EN PANTALLA
 function show_players() {
     var completelist= document.getElementById("thelist");
-    completelist.innerHTML += "<li>" + jugadors[jugadors.length-1] + " : " + puntajes[puntajes.length-1] + "</li>";        
+    completelist.innerHTML += "<li>" + jugadors[jugadors.length-1] + " : " + puntajes[puntajes.length-1] + " milseg </li>";        
+
+    var completetable = document.getElementById("theTable");
+    completetable.innerHTML += "<tr> <td>" + jugadors[jugadors.length-1] + "</td> <td>" + puntajes[puntajes.length-1] + "</td> </tr>";
 }
 // AGREGAR EL USUARIO A LA LISTA DE PUNTAJES
 function add_player(name) {
@@ -177,7 +193,7 @@ function add_time(flag) {
         puntajes.push(0);
     } else {
         fin = new Date();
-        puntajes.push(fin.getTime() - inicio.getTime());
+        puntajes.push(99999999 - (fin.getTime() - inicio.getTime()));
     }
 }
 // VOLVER A JUGAR CUANDO EL JUGADOR PRESIONA EL BOTON
@@ -195,4 +211,4 @@ $(document).ready(function () {
     main();
 });
 
-// CUARTO CHECKPOINT!
+// QUINTO CHECKPOINT!

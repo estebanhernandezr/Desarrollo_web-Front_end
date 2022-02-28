@@ -1,1 +1,24 @@
-/*CUARTO CHECKPOINT!*/
+table, th, td {
+    border:1px solid black;
+    margin: 10px;
+}
+
+#unknown_word {
+    height: 40px;
+    width: 453px;
+    padding: 0px;
+    border: 2px solid gainsboro;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow-x: auto;
+
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+#button_ayuda {
+    margin-top: 50px;
+}
+
+/*QUINTO CHECKPOINT!*/
