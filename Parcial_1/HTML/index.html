@@ -22,6 +22,16 @@
 
     <body>
         <div class="container-fluid" id="hero">
+            <div class="container">
+                <h1>
+                    <span id="hour">00</span> :
+                    <span id="min">00</span> :
+                    <span id="sec">00</span> :
+                    <span id="milisec">00</span>
+                </h1>
+                <button onclick="startStop()" id="start" style="display: none;">Start</button>
+                <button onclick="reset()" style="display: none;">Reset</button>
+            </div>
             <div class="container" id="dibujo">
                 <img src="../OTROS/dibujo_1.PNG" alt="dibujo ahorcado" id="dibujo_ahorcado">
             </div>
@@ -175,6 +185,9 @@
         <script src="../JS/logic.js">
             alert("RAISE VALUE ERROR");
         </script>
+        <!--<script src="../JS/clock.js">
+            alert("RAISE VALUE ERROR");
+        </script>-->
     </body>
     <!--QUINTO CHECKPOINT!-->
 </html>

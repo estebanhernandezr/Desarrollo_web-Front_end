@@ -28,6 +28,8 @@ function main() {
 function init() {
     intentos = 6;
     inicio = new Date();
+    reset();
+    startStop();
     let pos_aleatoria = random_int_int(0, palabras.length-1);
     palabra_misterio_backend = palabras[pos_aleatoria];
 
@@ -195,6 +197,7 @@ function add_time(flag) {
         fin = new Date();
         puntajes.push(99999999 - (fin.getTime() - inicio.getTime()));
     }
+    startStop();
 }
 // VOLVER A JUGAR CUANDO EL JUGADOR PRESIONA EL BOTON
 function play_again() {
@@ -205,6 +208,100 @@ function play_again() {
         init();
     });
 }
+
+/* 
+    CRONOMETRO EN JAVASCRIPT
+    CREADOR: frobinsonj & Subha Jeet Sikdar
+    ORIGINAL PUBLISHING: https://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-javascript
+    DATE: 25th July 2019.
+*/
+var x;
+var startstop = 0;
+function startStop() { /* Toggle StartStop */
+
+  startstop = startstop + 1;
+
+  if (startstop === 1) {
+    start();
+    document.getElementById("start").innerHTML = "Stop";
+  } else if (startstop === 2) {
+    document.getElementById("start").innerHTML = "Start";
+    startstop = 0;
+    stop();
+  }
+
+}
+function start() {
+  x = setInterval(timer, 10);
+} /* Start */
+
+function stop() {
+  clearInterval(x);
+} /* Stop */
+
+var milisec = 0;
+var sec = 0; /* holds incrementing value */
+var min = 0;
+var hour = 0;
+
+/* Contains and outputs returned value of  function checkTime */
+
+var miliSecOut = 0;
+var secOut = 0;
+var minOut = 0;
+var hourOut = 0;
+
+/* Output variable End */
+
+function timer() {
+  /* Main Timer */
+  miliSecOut = checkTime(milisec);
+  secOut = checkTime(sec);
+  minOut = checkTime(min);
+  hourOut = checkTime(hour);
+  milisec = ++milisec;
+  if (milisec === 100) {
+    milisec = 0;
+    sec = ++sec;
+  }
+  if (sec == 60) {
+    min = ++min;
+    sec = 0;
+  }
+  if (min == 60) {
+    min = 0;
+    hour = ++hour;
+  }
+  document.getElementById("milisec").innerHTML = miliSecOut;
+  document.getElementById("sec").innerHTML = secOut;
+  document.getElementById("min").innerHTML = minOut;
+  document.getElementById("hour").innerHTML = hourOut;
+
+}
+/* Adds 0 when value is <10 */
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function reset() {
+  /*Reset*/
+  milisec = 0;
+  sec = 0;
+  min = 0
+  hour = 0;
+
+  document.getElementById("milisec").innerHTML = "00";
+  document.getElementById("sec").innerHTML = "00";
+  document.getElementById("min").innerHTML = "00";
+  document.getElementById("hour").innerHTML = "00";
+
+}
+
+
+
 
 $(document).ready(function () {
     palabras = init_words();
