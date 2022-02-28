@@ -1,25 +1,30 @@
-var intentos = 5;  // INT
-var jugadors = 10; // INT
+var intentos;  // INT
 
 var palabras; // LISTA DE STRING's
 var puntajes; // LISTA DE INT's
+var jugadors = ["Player"]; // LISTA DE STRING's
 
 var palabra_misterio_backend; // STRING
 var palabra_misterio_frontend; // STRING
 
+var jugador_actual; // INT
+
+// BEGGINING OF EXECUTION
 function main() {
+    $("#hero").show();
     $("#login").hide();
+
     init();
     palabra_misterio_backend = String(palabra_misterio_backend);
     palabra_misterio_frontend = String(palabra_misterio_frontend);
     $("#unknown_word").attr("value", palabra_misterio_frontend);
     catch_click();
+    catch_nickname();
+    play_again();
 }
-
+// INICIALIZAR LAS VARIABLES GLOBALES EN SUS VALORES POR DEFECTO
 function init() {
-    palabras = init_words();
-    puntajes = init_scores(jugadors);
-
+    intentos = 5;
     let pos_aleatoria = random_int_int(0, palabras.length-1);
     palabra_misterio_backend = palabras[pos_aleatoria];
 
@@ -81,16 +86,18 @@ function check_victory() {
         alert("¡FELICITACIONES! HAS COMPLETADO LA PALABRA");
         init();
         $("#login").show();
+        show_players();
     }
 }
 // CHEQUEAR SI SE HAN ALCANZADO EL MAXIMO DE ERRORES PERMITIDOS
 function check_gameover() {
     if (intentos == 0) {
-        $("#hero").hide();
         alert("GAME OVER!");
         init();
         play_gameover();
+        $("#hero").hide();
         $("#login").show();
+        show_players();
     }
 }
 // REPRODUCIR SONIDO DE FONDO CUANDO EL JUGADOR COMETE UN ERROR
@@ -128,9 +135,36 @@ function catch_click() {
         check_gameover();
     });
 }
+// HACER ESTO CUANDO EL USUARIO INGRESA SU NICKNAME
+function catch_nickname() {
+    $("#submit_nickname").click(function () {
+        let val = document.getElementById('bar_nickname').value;
+        alert(val);
+        add_player(val);
+        show_players();
+    });
+}
+// IMPRIMIR LA LISTA MAS ACTUALIZADA EN PANTALLA
+function show_players() {
+    var completelist= document.getElementById("thelist");
+    completelist.innerHTML += "<li>Item " + jugadors[jugadors.length-1] + "</li>";        
+}
+// AGREGAR EL USUARIO A LA LISTA DE PUNTAJES
+function add_player(name) {
+    jugadors.push(name);
+}
+// VOLVER A JUGAR CUANDO EL JUGADOR PRESIONA EL BOTON
+function play_again() {
+    $("#play_again").click(function () {
+        $("#login").hide();
+        $("#hero").show();
+    });
+}
 
 $(document).ready(function () {
+    palabras = init_words();
+    puntajes = init_scores(jugadors.length);
     main();
 });
 
-// SEGUNDO CHECKPOINT!
+// TERCER CHECKPOINT!
