@@ -8,6 +8,7 @@ var palabra_misterio_backend; // STRING
 var palabra_misterio_frontend; // STRING
 
 function main() {
+    $("#login").hide();
     init();
     palabra_misterio_backend = String(palabra_misterio_backend);
     palabra_misterio_frontend = String(palabra_misterio_frontend);
@@ -19,7 +20,7 @@ function init() {
     palabras = init_words();
     puntajes = init_scores(jugadors);
 
-    let pos_aleatoria = random_int_int(0, palabras.length);
+    let pos_aleatoria = random_int_int(0, palabras.length-1);
     palabra_misterio_backend = palabras[pos_aleatoria];
 
     palabra_misterio_frontend = "";
@@ -62,13 +63,45 @@ function del_word(words_list, indx) {
 function random_int_int(min, max) {
     return Math.round(Math.random() * (max - min) + min); 
 }
+// HACER TRANSICION DE IMAGEN DEL AHORCADO
+function make_img_transition() {
+    let num_dibujos = 7;
+    $("#dibujo_ahorcado").attr("src", "../OTROS/dibujo_" + (num_dibujos - intentos) + ".PNG");
+}
+// CHEQUEAR SI EL JUGADOR HA COMPLETADO TODA LA PALABRA
+function check_victory() {
+    let flag = false;
+    for (let i = 0; i < palabra_misterio_frontend.length; i++) {
+        if (palabra_misterio_frontend[i] == "X") {
+            flag = true;
+        }
+    }
+    if (!flag) {
+        $("#hero").hide();
+        alert("¡FELICITACIONES! HAS COMPLETADO LA PALABRA");
+        init();
+        $("#login").show();
+    }
+}
 // CHEQUEAR SI SE HAN ALCANZADO EL MAXIMO DE ERRORES PERMITIDOS
 function check_gameover() {
     if (intentos == 0) {
+        $("#hero").hide();
         alert("GAME OVER!");
-    } else {
-        alert("intentos restantes: " + intentos);
+        init();
+        play_gameover();
+        $("#login").show();
     }
+}
+// REPRODUCIR SONIDO DE FONDO CUANDO EL JUGADOR COMETE UN ERROR
+function play_error() {
+    var audio = new Audio("../OTROS/chicharra-error-incorrecto-.mp3");
+    audio.play();
+}
+// REPRODUCIR SONIDO DE FONDO CUANDO AL JUEGO A TERMINADO POR GAMEOVER
+function play_gameover() {
+    var audio = new Audio("../OTROS/incorrecto-bocina-.mp3");
+    audio.play();
 }
 // REMPLAZAR CHARACTER EN LA POSICION DE UN STRING
 String.prototype.replaceAt = function(index, replacement) {
@@ -84,10 +117,14 @@ function catch_click() {
                 flag = true;
             }
         }
+        $(this).hide();
         $("#unknown_word").attr("value", palabra_misterio_frontend);
         if (!flag) {
-            intentos--;   
+            make_img_transition();
+            intentos--;
+            play_error();
         }
+        check_victory();
         check_gameover();
     });
 }
@@ -96,4 +133,4 @@ $(document).ready(function () {
     main();
 });
 
-// PRIMER CHECKPOINT!
+// SEGUNDO CHECKPOINT!
