@@ -1,7 +1,7 @@
 var intentos;  // INT
 
 var palabras; // LISTA DE STRING's
-var puntajes; // LISTA DE INT's
+var puntajes = [0]; // LISTA DE INT's
 var jugadors = ["Player"]; // LISTA DE STRING's
 
 var palabra_misterio_backend; // STRING
@@ -9,22 +9,25 @@ var palabra_misterio_frontend; // STRING
 
 var jugador_actual; // INT
 
+var inicio;
+var fin;
 // BEGGINING OF EXECUTION
 function main() {
     $("#hero").show();
     $("#login").hide();
-
     init();
     palabra_misterio_backend = String(palabra_misterio_backend);
     palabra_misterio_frontend = String(palabra_misterio_frontend);
     $("#unknown_word").attr("value", palabra_misterio_frontend);
     catch_click();
     catch_nickname();
+    catch_hint();
     play_again();
 }
 // INICIALIZAR LAS VARIABLES GLOBALES EN SUS VALORES POR DEFECTO
 function init() {
-    intentos = 5;
+    intentos = 6;
+    inicio = new Date();
     let pos_aleatoria = random_int_int(0, palabras.length-1);
     palabra_misterio_backend = palabras[pos_aleatoria];
 
@@ -32,6 +35,8 @@ function init() {
     for (let i = 0; i < palabra_misterio_backend.length; i++) {
         palabra_misterio_frontend += "X";
     }
+    $("#unknown_word").attr("value", palabra_misterio_frontend);
+    make_img_transition();
 }
 // INICIALIZAR UNA LISTA DE PALABRAS CON ALGUNAS PALABRAS INICIALES
 function init_words() {
@@ -84,20 +89,20 @@ function check_victory() {
     if (!flag) {
         $("#hero").hide();
         alert("¡FELICITACIONES! HAS COMPLETADO LA PALABRA");
-        init();
+        //init();
         $("#login").show();
-        show_players();
+        add_time(false);
     }
 }
 // CHEQUEAR SI SE HAN ALCANZADO EL MAXIMO DE ERRORES PERMITIDOS
 function check_gameover() {
     if (intentos == 0) {
         alert("GAME OVER!");
-        init();
+        //init();
         play_gameover();
         $("#hero").hide();
         $("#login").show();
-        show_players();
+        add_time(true);
     }
 }
 // REPRODUCIR SONIDO DE FONDO CUANDO EL JUGADOR COMETE UN ERROR
@@ -139,32 +144,55 @@ function catch_click() {
 function catch_nickname() {
     $("#submit_nickname").click(function () {
         let val = document.getElementById('bar_nickname').value;
-        alert(val);
+        //alert(puntajes);
         add_player(val);
+        //add_time();
         show_players();
+    });
+}
+// AYUDA QUE IMPRIME UNA DE LAS LETRAS DE LA PALABRA DE MANERA ALEATORIA
+function catch_hint() {
+    $("#button_ayuda").click(function () {
+        let pos_aleatoria = random_int_int(0, palabra_misterio_backend.length-1);
+        for (let i = 0; i < palabra_misterio_backend.length; i++) {
+            if (i == pos_aleatoria) {
+                palabra_misterio_frontend = palabra_misterio_frontend.replaceAt(i, palabra_misterio_backend[i]);
+            }
+        }
+        $("#unknown_word").attr("value", palabra_misterio_frontend);
     });
 }
 // IMPRIMIR LA LISTA MAS ACTUALIZADA EN PANTALLA
 function show_players() {
     var completelist= document.getElementById("thelist");
-    completelist.innerHTML += "<li>Item " + jugadors[jugadors.length-1] + "</li>";        
+    completelist.innerHTML += "<li>" + jugadors[jugadors.length-1] + " : " + puntajes[puntajes.length-1] + "</li>";        
 }
 // AGREGAR EL USUARIO A LA LISTA DE PUNTAJES
 function add_player(name) {
     jugadors.push(name);
+}
+// AGREGAR EL TIEMPO DEL USUARIO A LA LISTA DE PUNTAJES
+function add_time(flag) {
+    if (flag) {
+        puntajes.push(0);
+    } else {
+        fin = new Date();
+        puntajes.push(fin.getTime() - inicio.getTime());
+    }
 }
 // VOLVER A JUGAR CUANDO EL JUGADOR PRESIONA EL BOTON
 function play_again() {
     $("#play_again").click(function () {
         $("#login").hide();
         $("#hero").show();
+        $(".key_button").show();
+        init();
     });
 }
 
 $(document).ready(function () {
     palabras = init_words();
-    puntajes = init_scores(jugadors.length);
     main();
 });
 
-// TERCER CHECKPOINT!
+// CUARTO CHECKPOINT!
